@@ -1,1 +1,6 @@
 hello nikita!
+protocol buffer is one of the most fast and thin serialize framework in the internet world
+
+however the example on the developer.google.com is not friendly to java developer,as its use is very rely on bussiness() code and very unconvenient
+
+so there is one sentence that "java problem java done",thanks to the java reflect package(J.L.R),we could easily describle a java object by itself instead of the fucking *.proto file,and then convert it to Messager Format which accord with the PB standard,and the process of process is the same way...
