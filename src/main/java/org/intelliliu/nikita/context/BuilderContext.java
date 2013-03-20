@@ -123,24 +123,4 @@ public class BuilderContext {
         return descriptorGenerateContext.descriptorFromClass(clazz);
     }
 
-    public ServiceDescriptor serviceFromInterface(Class<?> clazz) {
-        DescriptorGenerateContext descriptorGenerateContext = new DescriptorGenerateContext(this);
-        return descriptorGenerateContext.serviceFromInterface(clazz);
-    }
-
-    public MethodDescriptor methodDescriptor(String service, String mthod) {
-//        List<FileDescriptor> dependencies = rootFileDescriptor.getDependencies();
-        FileDescriptor descriptor = null;
-//        for (FileDescriptor fileDescriptor : dependencies) {
-//            String temp = fileDescriptor.getName();
-//            if (temp.equals(service)) {
-//                descriptor = fileDescriptor;
-//                break;
-//            }
-//        }
-        descriptor=descriptorDictionary.get(service);
-        ServiceDescriptor serviceDescriptor = descriptor.findServiceByName(descriptor.getName().replace(descriptor.getPackage() + ".", ""));
-        return serviceDescriptor.findMethodByName(mthod);
-    }
-
 }
