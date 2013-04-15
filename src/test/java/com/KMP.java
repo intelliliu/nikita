@@ -46,17 +46,17 @@ public class KMP {
         int j=0;
         for(;i<target.length();){
             if(pattern.charAt(j)==target.charAt(i)){
-                if(j==pattern.length()-1){
+                if(j==pattern.length()-1){//完全匹配了
                     return i-pattern.length();
-                }else{
+                }else{//继续比较下一个
                     j++;
                     i++;
                 }
             }else {
-                if(j==0||next[j-1]==-1){
+                if(j==0||next[j-1]==-1){//最好情况，跳的最远（pattern[0...j-1]前缀长度为0）
                     j=0;
                     i++;
-                }else{
+                }else{//pattern[0...j-1]前缀长度大于0
                     j=next[j-1]+1;
                 }
             }
