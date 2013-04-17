@@ -50,7 +50,7 @@ public class TrieTree {
                 return new ArrayList<Node>();
             }
         }
-        print(cur.c+","+cur.child.size());
+//        print(cur.c+","+cur.child.size());
         return collectLeaf(cur,new ArrayList<Node>());
     }
     void print(String str){
@@ -60,7 +60,6 @@ public class TrieTree {
         Node cur=n;
         if(cur!=null) {
             for (char c:cur.child.keySet()){
-                print("char:"+c);
                 Node oneChild=cur.child.get(c);
                 if(oneChild==null||oneChild.child.size()==0){
                     list.add(oneChild);
@@ -81,11 +80,13 @@ public class TrieTree {
     }
     @Test
     public void test(){
-        insert("amqjava");
-        insert("amqb");
-        insert("amqc");
-        insert("amqd");
-        List<Node> list=associateWord(new StringBuilder("amp"));
+        insert("kmpjaua");
+        insert("kmpjava");
+        insert("kmpjdk");
+        insert("kmpb");
+        insert("kmpc");
+        insert("kmpd");
+        List<Node> list=associateWord(new StringBuilder("kmpj"));//用户搜索的前缀
         print("list.size():"+list.size());
         for (Node e:list){
             print("fullString:"+getFullString(e));
